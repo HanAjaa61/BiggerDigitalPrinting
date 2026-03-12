@@ -1,0 +1,98 @@
+[
+  {
+    "id": "spanduk",
+    "name": "Spanduk",
+    "category": "Outdoor",
+    "desc": "Cetak spanduk berbagai ukuran dengan bahan flexi berkualitas, tahan cuaca dan warna tajam.",
+    "img": "/produk/spanduk.jpeg",
+    "startPrice": "Rp 25.000",
+    "unit": "/ m²",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/spanduk"
+  },
+  {
+    "id": "foto",
+    "name": "Foto",
+    "category": "Indoor",
+    "desc": "Foto dengan bahan luster berkualitas.",
+    "img": "/produk/luster.png",
+    "startPrice": "Rp 150.000",
+    "unit": "/ lembar",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/foto"
+  },
+  {
+    "id": "nota",
+    "name": "Nota",
+    "category": "Indoor",
+    "desc": "Nota custom dengan berbagai pilihan ukuran dan finishing.",
+    "img": "/produk/nota.png",
+    "startPrice": "Rp 350.000",
+    "unit": "/ rim",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/nota"
+  },
+  {
+    "id": "stempel",
+    "name": "Stempel",
+    "category": "Indoor",
+    "desc": "Stempel custom dengan berbagai pilihan desain dan bahan.",
+    "img": "/produk/stempel.jpeg",
+    "startPrice": "Rp 45.000",
+    "unit": "/ pcs",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/stempel"
+  },
+  {
+    "id": "neon-box",
+    "name": "Neon Box",
+    "category": "Outdoor",
+    "desc": "Neon Box membantu bisnis anda tampil lebih menonjol terutama pada malam hari.",
+    "img": "/produk/neonbox.jpeg",
+    "startPrice": "Rp. 1.800.000",
+    "unit": "/ unit",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/neonbox"
+  },
+  {
+    "id": "huruf-timbul",
+    "name": "Huruf Timbul",
+    "category": "Promosi",
+    "desc": "Huruf timbul merupakan media branding visual dengan desain tiga dimensi yang diproduksi secara presisi, menggunakan material berkualitas untuk hasil yang kuat, rapi, dan tahan lama.",
+    "img": "/produk/huruftimbul.png",
+    "startPrice": "Harga Custom",
+    "unit": "",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/huruftimbul"
+  },
+  {
+    "id": "cuttingstiker",
+    "name": "Cutting Stiker",
+    "category": "Promosi",
+    "desc": "Cutting stiker presisi tinggi untuk kebutuhan dekorasi, branding, dan promosi. Tersedia dalam 1, 2, hingga 3 warna dengan hasil rapi dan tahan lama. Harga dihitung berdasarkan luas area (panjang × lebar).",
+    "img": "/produk/cuttingstiker.png",
+    "startPrice": "Rp 75",
+    "unit": "/ cm²",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/cuttingstiker"
+  },
+  {
+    "id": "kaossablondtf",
+    "name": "Kaos Sablon DTF",
+    "category": "Indoor",
+    "desc": "Kaos sablon DTF menghasilkan cetakan warna tajam, detail tinggi, dan tahan lama di berbagai jenis kain. Cocok untuk seragam, merchandise, dan keperluan promosi.",
+    "img": "/produk/kaosdtf.png",
+    "startPrice": "Rp 100.000",
+    "unit": "/ pcs",
+    "badge": "Terlaris",
+    "badgeColor": "",
+    "route": "/services/kaossablondtf"
+  }
+]
