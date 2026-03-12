@@ -95,7 +95,7 @@ import { useRouter, useRoute } from 'vue-router'
 
 const socials = {
   instagram: 'https://www.instagram.com/biggerdigitalprinting?igsh=MWpxbXN1b2pxZ3JhaA==',
-  facebook: 'https://www.facebook.com/biggerdigitalprinting/'
+  facebook: 'https://www.facebook.com/biggersingaraja'
 }
 
 const footerRef = ref(null)
