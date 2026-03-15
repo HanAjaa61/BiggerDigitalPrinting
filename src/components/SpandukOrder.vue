@@ -511,7 +511,7 @@ export default {
         msg += `Jenis Produk: ${this.materialLabels[o.material]}\n`
         msg += `Ukuran: ${o.length}m × ${o.width}m (${o.area} m²)\n`
         msg += `Kuantitas: ${o.quantity} pcs\n`
-        msg += `Ujung Spanduk: ${o.ujung === 'dilubangi' ? 'Dilubangi (+Rp 15.000)' : 'Tidak Dilubangi'}\n`
+        msg += `Ujung Spanduk: ${o.ujung === 'dilubangi' ? 'Dilubangi (+Rp 20.000)' : 'Tidak Dilubangi'}\n`
         if (o.komentar && o.komentar.trim()) msg += `Komentar: ${o.komentar.trim()}\n`
         msg += `Harga Cetak: ${this.formatCurrency(o.printPrice)}\n`
         msg += `Subtotal: ${this.formatCurrency(o.totalPrice)}\n`
