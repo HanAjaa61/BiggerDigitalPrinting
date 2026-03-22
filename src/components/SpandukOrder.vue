@@ -383,7 +383,7 @@ export default {
       errorTitle: '',
       errorMessage: '',
       materialOptions: {
-        flexi280:             { name: 'Flexi 280 GSM',        price: 20000,  design: false },
+        flexi280:             { name: 'Flexi 280 GSM',        price: 25000,  design: false },
         flexi280_design:      { name: 'Flexi 280 GSM',        price: 50000,  design: true  },
         flexikorea440:        { name: 'Flexi Korea 440 GSM',  price: 75000,  design: false },
         flexikorea440_design: { name: 'Flexi Korea 440 GSM',  price: 85000,  design: true  },
