@@ -17,7 +17,7 @@
         <div class="tos-item">
           <h3>2. Konten Website</h3>
           <p>
-            Semua konten, termasuk teks, gambar, logo, dan materi digital lainnya, adalah milik CV. Kreasindo Jaya atau pihak yang telah memberi izin. Konten tidak boleh disalin, disebarluaskan, atau digunakan tanpa izin resmi.
+            Semua konten, termasuk teks, gambar, logo, dan materi digital lainnya, adalah milik Bigger Digital Printing atau pihak yang telah memberi izin. Konten tidak boleh disalin, disebarluaskan, atau digunakan tanpa izin resmi.
           </p>
         </div>
 

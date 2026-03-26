@@ -10,6 +10,8 @@ import HurufTimbulOrder from '@/components/HurufTimbulOrder.vue'
 import NotaOrder from '@/components/NotaOrder.vue'
 import CuttingStikerOrder from '@/components/CuttingStikerOrder.vue'
 import KaosSablonDTF from '@/components/KaosSablonDTF.vue'
+import Terms from '@/components/TermsOfServices.vue'
+import Privacy from '@/components/PrivacyPolicy.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -65,6 +67,16 @@ const router = createRouter({
       path: '/services/kaossablondtf',
       name: 'KaosSablonDTF',
       component: KaosSablonDTF
+    },
+    {
+      path: '/terms',
+      name: 'Terms',
+      component: Terms
+    },
+    {
+      path: '/privacy',
+      name: 'Privacy',
+      component: Privacy
     }
   ],
 })

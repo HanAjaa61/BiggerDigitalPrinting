@@ -78,9 +78,9 @@
         <div class="bottom-content">
           <p class="copyright">© 2026 Bigger Digital Printing. All Rights Reserved</p>
           <div class="bottom-links">
-            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/privacy">Privacy Policy</a>
             <span class="separator">•</span>
-            <a href="/terms-of-services">Terms of Service</a>
+            <a href="/terms">Terms of Service</a>
           </div>
         </div>
       </div>
