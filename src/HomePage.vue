@@ -3,6 +3,7 @@ import LandingPage from '@/components/LandingPage.vue';
 import About from '@/components/About.vue';
 import PaymentSection from '@/components/PaymentSection.vue';
 import CollabSection from './components/CollabSection.vue';
+import VisitorChart from './components/VisitorChart.vue';
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import CollabSection from './components/CollabSection.vue';
     <About />
     <PaymentSection />
     <CollabSection />
+    <VisitorChart />
   </main>
 </template>
