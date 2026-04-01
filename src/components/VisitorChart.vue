@@ -1,13 +1,17 @@
 <template>
-  <div class="visitor-chart">
-    <h2>Statistik Pengunjung (30 Hari Terakhir)</h2>
+  <section class="visitor-section">
+    <div class="visitor-bg-img" aria-hidden="true"></div>
 
-    <div v-if="loading" class="state">Memuat data...</div>
-    <div v-else-if="error" class="state error">{{ error }}</div>
-    <div v-else style="position: relative; height: 300px;">
-      <canvas ref="chartCanvas"></canvas>
+    <div class="visitor-chart">
+      <h2>Statistik Pengunjung (30 Hari Terakhir)</h2>
+
+      <div v-if="loading" class="state">Memuat data...</div>
+      <div v-else-if="error" class="state error">{{ error }}</div>
+      <div v-else style="position: relative; height: 300px;">
+        <canvas ref="chartCanvas"></canvas>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -46,7 +50,6 @@ async function loadChart() {
     )
     const counts = data.map(row => row.count)
 
-    // Tunggu DOM benar-benar siap
     loading.value = false
     await nextTick()
 
@@ -109,7 +112,43 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.visitor-section {
+  position: relative;
+  overflow: hidden;
+  background: #f9fafb;
+  padding: 60px 0;
+}
+
+.visitor-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('@/assets/balibg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.visitor-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(249,250,251,0.55) 0%,
+    rgba(249,250,251,0.30) 40%,
+    rgba(249,250,251,0.30) 60%,
+    rgba(249,250,251,0.55) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
 .visitor-chart {
+  position: relative;
+  z-index: 1;
   max-width: 720px;
   margin: 0 auto;
   padding: 24px;
