@@ -53,7 +53,8 @@ async function loadChart() {
     const counts = data.map(row => row.count)
 
     // Tunggu DOM siap
-    await new Promise(r => setTimeout(r, 0))
+    // Tunggu DOM siap
+    await new Promise(r => setTimeout(r, 100))  
 
     chartInstance = new Chart(chartCanvas.value, {
       type: 'line',
