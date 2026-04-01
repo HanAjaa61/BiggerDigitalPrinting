@@ -17,8 +17,13 @@ export default async function handler(req, res) {
     );
 
     return res.status(200).json({ ok: true });
+
   } catch (err) {
-    console.error('[POST /api/visit]', err);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('[POST /api/visit]', {
+      message: err.message,
+      code:    err.code,
+      host:    process.env.DB_HOST,
+    });
+    return res.status(500).json({ error: err.message });
   }
 }

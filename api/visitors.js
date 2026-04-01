@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const pool = getPool();
+    const pool = getPool(); // ← akan throw jika env vars kosong
 
     const [rows] = await pool.execute(
       `SELECT date, count
@@ -16,8 +16,15 @@ export default async function handler(req, res) {
     );
 
     return res.status(200).json(rows);
+
   } catch (err) {
-    console.error('[GET /api/visitors]', err);
-    return res.status(500).json({ error: 'Internal server error' });
+    // Log detail: kode error MySQL, pesan, host yang dicoba
+    console.error('[GET /api/visitors]', {
+      message: err.message,
+      code:    err.code,       // e.g. ECONNREFUSED, ER_ACCESS_DENIED_ERROR
+      host:    process.env.DB_HOST,
+      port:    process.env.DB_PORT,
+    });
+    return res.status(500).json({ error: err.message }); // ← tampilkan pesan asli sementara
   }
 }
