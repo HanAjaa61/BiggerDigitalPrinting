@@ -4,36 +4,31 @@
 
     <div v-if="loading" class="state">Memuat data...</div>
     <div v-else-if="error" class="state error">{{ error }}</div>
-    <canvas v-else ref="chartCanvas"></canvas>
+    <div v-else style="position: relative; height: 300px;">
+      <canvas ref="chartCanvas"></canvas>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import Chart from 'chart.js/auto'
 
 const chartCanvas = ref(null)
-const loading     = ref(true)
-const error       = ref(null)
-let   chartInstance = null
+const loading = ref(true)
+const error = ref(null)
+let chartInstance = null
 
-// ─── 1. Catat kunjungan (cegah double-count dengan localStorage) ────────────
 async function recordVisit() {
-  const TODAY      = new Date().toISOString().slice(0, 10)
+  const TODAY = new Date().toISOString().slice(0, 10)
   const STORAGE_KEY = 'visitor_recorded_date'
-
-  // Jika sudah dicatat hari ini, skip
   if (localStorage.getItem(STORAGE_KEY) === TODAY) return
-
   try {
     await fetch('/api/visit', { method: 'POST' })
     localStorage.setItem(STORAGE_KEY, TODAY)
-  } catch {
-    // Gagal catat kunjungan tidak perlu tampilkan error ke user
-  }
+  } catch {}
 }
 
-// ─── 2. Ambil data & render grafik ─────────────────────────────────────────
 async function loadChart() {
   try {
     const res = await fetch('/api/visitors')
@@ -41,7 +36,6 @@ async function loadChart() {
 
     const data = await res.json()
 
-    // Jika tidak ada data sama sekali
     if (!data.length) {
       error.value = 'Belum ada data pengunjung.'
       return
@@ -52,28 +46,34 @@ async function loadChart() {
     )
     const counts = data.map(row => row.count)
 
-    // Tunggu DOM siap
-    // Tunggu DOM siap
-    await new Promise(r => setTimeout(r, 100))  
+    // Tunggu DOM benar-benar siap
+    loading.value = false
+    await nextTick()
+
+    if (!chartCanvas.value) {
+      error.value = 'Gagal memuat grafik.'
+      return
+    }
 
     chartInstance = new Chart(chartCanvas.value, {
       type: 'line',
       data: {
         labels,
         datasets: [{
-          label:           'Pengunjung',
-          data:            counts,
-          borderColor:     '#1d4ed8',
+          label: 'Pengunjung',
+          data: counts,
+          borderColor: '#1d4ed8',
           backgroundColor: 'rgba(29, 78, 216, 0.08)',
-          borderWidth:     2,
-          pointRadius:     4,
+          borderWidth: 2,
+          pointRadius: 4,
           pointHoverRadius: 6,
-          fill:            true,
-          tension:         0.4,
+          fill: true,
+          tension: 0.4,
         }]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -85,7 +85,7 @@ async function loadChart() {
         scales: {
           y: {
             beginAtZero: true,
-            ticks: { precision: 0 }  // hanya tampilkan angka bulat
+            ticks: { precision: 0 }
           }
         }
       }
@@ -103,7 +103,6 @@ onMounted(async () => {
   await loadChart()
 })
 
-// Bersihkan Chart saat komponen di-unmount agar tidak memory leak
 onBeforeUnmount(() => {
   chartInstance?.destroy()
 })
